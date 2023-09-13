@@ -1,0 +1,18 @@
+
+mat-card {
+  min-width: 300px;
+  margin: 5px 2px 5px 2px;
+}
+
+.column-name {
+  font-weight: bold;
+}
+
+.column-value {
+  font-size: 18px;
+  padding-left: 30px;
+}
+
+.card-content-line {
+  margin-top: 5px;
+}

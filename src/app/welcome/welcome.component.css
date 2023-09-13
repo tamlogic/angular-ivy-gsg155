@@ -1,0 +1,22 @@
+
+content {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+mat-card {
+  margin-top: 40px;
+  width: 90%;
+  max-width: 900px;
+}
+
+mat-card-header {
+  background-color: lightgray;
+}
+
+mat-card-content {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 60px;
+}

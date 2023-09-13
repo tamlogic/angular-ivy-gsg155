@@ -1,0 +1,31 @@
+
+<mat-card class="mat-elevation-z8">
+
+  <mat-card-title>Widget {{widget.name}} ({{widget.id}})</mat-card-title>
+
+  <mat-card-content>
+
+    <div class="card-content-line">
+      <span class="column-name">Name: </span>
+      <span class="column-value">{{widget.name}}</span>
+    </div>
+
+    <div class="card-content-line">
+      <span class="column-name">Color: </span>
+      <span class="column-value" [style.color]="widget.color">{{widget.color}}</span>
+    </div>
+
+    <div class="card-content-line">
+      <span class="column-name">Price: </span>
+      <span class="column-value">{{widget.price | currency}}</span>
+    </div>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-icon-button color="primary" (click)="onDelete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+
+</mat-card>

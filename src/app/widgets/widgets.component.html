@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <h4>Widgets ({{ (widgets$ | async).length }})</h4>
+
+  <div class="square" style="background-color:blue"></div><span class="widgets-by-color">: {{(blueWidgets$ | async).length}} </span>
+  <div class="square" style="background-color:red"></div><span class="widgets-by-color">: {{(redWidgets$ | async).length}}</span>
+  <div class="square" style="background-color:green"></div><span class="widgets-by-color">: {{(greenWidgets$ | async).length}}</span>
+
+  <div style="flex-grow: 1"></div>
+
+  <button mat-mini-fab color="primary" (click)="showAddWidgetDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- <section id="widgets-section">
+  <app-widget *ngFor="let widget of widgets" [widget]="widget"
+      (delete)="onDeleteWidget($event)"></app-widget>
+</section> -->
+
+<section id="widgets-section">
+  <app-widget *ngFor="let widget of (widgets$ | async)" [widget]="widget"
+      (delete)="onDeleteWidget($event)"></app-widget>
+</section>
+
+<button mat-raised-button (click)="addDummyWidgets()">
+  <mat-icon>add_to_photos</mat-icon>
+  ADD 3
+</button>

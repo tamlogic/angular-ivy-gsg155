@@ -1,0 +1,25 @@
+
+/* app-widget {
+  display: flex;
+  flex-flow: row wrap;
+} */
+
+#widgets-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.square {
+  height: 10px;
+  width: 10px;
+  margin-left: 10px;
+}
+
+.widgets-by-color {
+  font-size: 15px;
+}

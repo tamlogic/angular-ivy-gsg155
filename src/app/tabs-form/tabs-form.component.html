@@ -1,0 +1,66 @@
+
+<content>
+
+  <mat-card class="mat-elevation-z8">
+
+    <mat-card-header><h2>Dynamic Tab Form</h2></mat-card-header>
+
+    <mat-card-content>
+
+      <form [formGroup]="form">
+
+        <mat-form-field>
+          <input matInput placeholder="Value1" formControlName="value1" cdkFocusInitial>
+          <mat-error *ngIf="form.get('value1').hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Value2" formControlName="value2" cdkFocusInitial>
+          <mat-error *ngIf="form.get('value2').hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <fieldset>
+          <legend>People</legend>
+        <mat-tab-group formArrayName="people">
+
+          <mat-tab *ngFor="let person of people.controls; index as i" label="{{person.get('first').value}}">
+            <!-- <ng-container [formGroupName]="i"> -->
+            <div class="tab-content" [formGroupName]="i">
+
+              <mat-form-field>
+                <input matInput placeholder="First Name" formControlName="first">
+                <mat-error *ngIf="person.get('first').hasError('required')">Required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Last Name" formControlName="last">
+                <mat-error *ngIf="person.get('last').hasError('required')">Required</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Salary" formControlName="salary">
+              </mat-form-field>
+
+            </div>
+            <!-- </ng-container> -->
+          </mat-tab>
+
+        </mat-tab-group>
+        </fieldset>
+
+      </form>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [disabled]="!form.valid">NEXT ></button>
+    </mat-card-actions>
+
+  </mat-card>
+
+</content>
+
+
+<div class="form-values">
+  {{form.value | json}}
+</div>
